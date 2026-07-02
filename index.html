@@ -6,6 +6,7 @@
 <title>Hub de Recursos – Argentinos por la Educación</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <style>
   :root {
     --celeste: #71BED2;
@@ -34,7 +35,6 @@
     font-size: 14px;
   }
 
-  /* HEADER */
   .header {
     background: var(--gris-oscuro);
     height: 50px;
@@ -58,10 +58,7 @@
     gap: 10px;
   }
   .header-logo .accent { color: var(--celeste); }
-  .header-sep {
-    width: 1px; height: 18px;
-    background: rgba(255,255,255,0.2);
-  }
+  .header-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.2); }
   .header-sub {
     font-size: 11px;
     font-weight: 400;
@@ -79,13 +76,11 @@
   .header-contact a { color: rgba(255,255,255,0.7); text-decoration: none; }
   .header-contact a:hover { color: var(--celeste); }
 
-  /* MAIN LAYOUT */
   .layout {
     display: flex;
     min-height: calc(100vh - 50px);
   }
 
-  /* SIDEBAR */
   .sidebar {
     width: 260px;
     min-width: 260px;
@@ -96,11 +91,7 @@
     flex-direction: column;
     gap: 0;
   }
-  .sidebar-dec {
-    width: 30px; height: 5px;
-    background: var(--celeste);
-    margin-bottom: 10px;
-  }
+  .sidebar-dec { width: 30px; height: 5px; background: var(--celeste); margin-bottom: 10px; }
   .sidebar-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -157,33 +148,19 @@
     padding: 1px 6px;
     border-radius: 10px;
   }
-  .nav-item.active .nav-count {
-    background: var(--celeste);
-    color: white;
-  }
+  .nav-item.active .nav-count { background: var(--celeste); color: white; }
 
-  /* SIDEBAR FOOTER */
   .sidebar-footer {
     margin-top: auto;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
   }
-  .sidebar-footer p {
-    font-size: 11px;
-    color: var(--gris-medio);
-    line-height: 1.5;
-  }
+  .sidebar-footer p { font-size: 11px; color: var(--gris-medio); line-height: 1.5; }
   .sidebar-footer a { color: var(--celeste-dark); text-decoration: none; }
   .sidebar-footer a:hover { text-decoration: underline; }
 
-  /* MAIN CONTENT */
-  .content {
-    flex: 1;
-    padding: 2rem;
-    overflow-x: hidden;
-  }
+  .content { flex: 1; padding: 2rem; overflow-x: hidden; }
 
-  /* SEARCH */
   .search-wrap {
     display: flex;
     align-items: center;
@@ -211,7 +188,6 @@
   }
   #search-clear:hover { color: var(--gris-oscuro); }
 
-  /* PINNED */
   .pinned {
     background: var(--blanco);
     border: 1px solid var(--border);
@@ -219,12 +195,7 @@
     padding: 1rem 1.25rem;
     margin-bottom: 1.75rem;
   }
-  .pinned-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
+  .pinned-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
   .pinned-dec { width: 16px; height: 4px; background: var(--celeste); border-radius: 1px; }
   .pinned-label {
     font-size: 10px;
@@ -233,11 +204,7 @@
     letter-spacing: .12em;
     color: var(--gris-medio);
   }
-  .pinned-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
+  .pinned-chips { display: flex; flex-wrap: wrap; gap: 7px; }
   .pin-chip {
     display: flex;
     align-items: center;
@@ -255,14 +222,9 @@
     white-space: nowrap;
   }
   .pin-chip i { font-size: 13px; color: var(--gris-medio); }
-  .pin-chip:hover {
-    background: var(--celeste);
-    border-color: var(--celeste);
-    color: var(--blanco);
-  }
+  .pin-chip:hover { background: var(--celeste); border-color: var(--celeste); color: var(--blanco); }
   .pin-chip:hover i { color: rgba(255,255,255,.85); }
 
-  /* SECTION HEADING */
   .section-heading {
     display: flex;
     align-items: center;
@@ -280,21 +242,14 @@
     letter-spacing: .14em;
     color: var(--gris-medio);
   }
-  .section-heading::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-heading::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  /* GRID */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 10px;
   }
 
-  /* CARD */
   .card {
     background: var(--blanco);
     border: 1px solid var(--border);
@@ -312,8 +267,7 @@
     content: '';
     position: absolute;
     top: 0; left: 0;
-    width: 3px;
-    height: 100%;
+    width: 3px; height: 100%;
     background: var(--celeste);
     transform: scaleY(0);
     transform-origin: top;
@@ -341,19 +295,8 @@
     padding: 2px 6px;
     border-radius: 2px;
   }
-  .card-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gris-oscuro);
-    line-height: 1.35;
-  }
-  .card-desc {
-    font-size: 11.5px;
-    font-weight: 300;
-    color: var(--gris-medio);
-    line-height: 1.45;
-    flex: 1;
-  }
+  .card-title { font-size: 13px; font-weight: 600; color: var(--gris-oscuro); line-height: 1.35; }
+  .card-desc { font-size: 11.5px; font-weight: 300; color: var(--gris-medio); line-height: 1.45; flex: 1; }
   .card-footer {
     display: flex;
     align-items: center;
@@ -362,14 +305,7 @@
     padding-top: 8px;
     border-top: 1px solid var(--border);
   }
-  .card-date {
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--gris-medio);
-    display: flex;
-    align-items: center;
-    gap: 3px;
-  }
+  .card-date { font-size: 10px; font-weight: 400; color: var(--gris-medio); display: flex; align-items: center; gap: 3px; }
   .card-date i { font-size: 11px; }
   .card-open {
     font-size: 10px;
@@ -385,14 +321,12 @@
   }
   .card:hover .card-open { opacity: 1; }
 
-  /* TAG COLORS — usando acento apropiado de la paleta AxE */
   .tag-inst    { background: var(--celeste-light); color: #2A7A90; }
   .tag-camp    { background: #FEF9E0; color: #7A6A00; }
   .tag-acuerdo { background: #EAF7EF; color: #2A7A4A; }
   .tag-comu    { background: #F4F4F4; color: #555555; }
   .tag-plant   { background: #FEF0F0; color: #9A2020; }
 
-  /* EMPTY */
   .empty {
     text-align: center;
     padding: 3rem 1rem;
@@ -440,7 +374,7 @@
     <div class="sidebar-label">Categorías</div>
     <button class="nav-item active" onclick="setFilter('todo',this)">
       <i class="ti ti-layout-grid"></i>Todos los recursos
-      <span class="nav-count" id="cnt-todo">31</span>
+      <span class="nav-count" id="cnt-todo"></span>
     </button>
     <button class="nav-item" onclick="setFilter('institucional',this)">
       <i class="ti ti-building"></i>Institucional
@@ -514,7 +448,8 @@ const recursos = [
   {titulo:"Campaña Tiempo Escolar – flyer",desc:"Imagen para difusión en redes",tag:"campañas",url:"https://drive.google.com/file/d/19lRTVtSVJHvjRcZ5Wf2eJZwfmETckhU-/view",fecha:"abr 2026",nuevo:true},
   {titulo:"Histórica Campaña Alfa",desc:"Campaña Nacional de Alfabetización 2025",tag:"campañas",url:"https://drive.google.com/file/d/1hczzoqZwqvYjnuCOyYxu-DmgKDxR4-US/view?usp=sharing",fecha:"may 2026",nuevo:true},
   {titulo:"Métricas Campaña Alfabetización",desc:"Reporte QELQL 2025",tag:"campañas",url:"https://drive.google.com/file/d/1CuV9pdforaZL3qRWXshmvWv98tGMaAjo/view?usp=sharing",fecha:"sept 2025"},
-  {titulo:"Logos QELQL y campaña alfa",desc:"Mano verde y logos de la campaña",tag:"campañas",url:"https://drive.google.com/drive/folders/1EW__OacO3hsrywNpYPA56nxe4v7Ngiqv?usp=drive_link",fecha:null},{titulo:"Logos campaña Tiempo Escolar",desc:"Logos de la campaña en formato vectorial",tag:"campañas",url:"https://drive.google.com/drive/folders/174imt04FjzYPBCbkB8GfldSjgPBYSXNh?usp=sharing",fecha:null},
+  {titulo:"Logos QELQL y campaña alfa",desc:"Mano verde y logos de la campaña",tag:"campañas",url:"https://drive.google.com/drive/folders/1EW__OacO3hsrywNpYPA56nxe4v7Ngiqv?usp=drive_link",fecha:null},
+  {titulo:"Logos campaña Tiempo Escolar",desc:"Logos de la campaña en formato vectorial",tag:"campañas",url:"https://drive.google.com/drive/folders/174imt04FjzYPBCbkB8GfldSjgPBYSXNh?usp=sharing",fecha:null},
   {titulo:"Acuerdo por la Educación – completo",desc:"Documento íntegro para compartir",tag:"acuerdos",url:"https://drive.google.com/file/d/1mmmNSsHZ95CA8_g2-0veMV6lHeFREEy1/view?usp=drive_link",fecha:"14 may 2026",nuevo:true},
   {titulo:"Acuerdo – resumen ejecutivo",desc:"Versión condensada del Acuerdo",tag:"acuerdos",url:"https://drive.google.com/file/d/1gIUaLtQUGg62dGhE8Vv9a7MV6Rxb1rri/view?usp=drive_link",fecha:"14 may 2026",nuevo:true},
   {titulo:"Acuerdo – presentación",desc:"Versión para presentar a terceros",tag:"acuerdos",url:"https://drive.google.com/file/d/19jnTImRK70ZJM1YQYCysTuFJub43W8lO/view?usp=drive_link",fecha:"14 may 2026",nuevo:true},
@@ -544,8 +479,15 @@ const tagMeta = {
   comunicación:  {label:"Comunicación", cls:"tag-comu",icon:"ti-photo"},
   plantillas:    {label:"Plantillas",   cls:"tag-plant",icon:"ti-template"},
 };
-
 const tagOrder = ['institucional','campañas','acuerdos','comunicación','plantillas'];
+
+// Fuse.js — búsqueda fuzzy
+const fuse = new Fuse(recursos, {
+  keys: ['titulo', 'desc', 'tag'],
+  threshold: 0.4,        // 0 = exacto, 1 = cualquier cosa. 0.4 es permisivo pero relevante
+  minMatchCharLength: 2,
+  includeScore: true,
+});
 
 let activeFilter = 'todo';
 let searchQuery = '';
@@ -557,7 +499,7 @@ function setFilter(f, btn) {
   render();
 }
 function onSearch(val) {
-  searchQuery = val.toLowerCase();
+  searchQuery = val.trim();
   document.getElementById('search-clear').style.display = val ? 'block' : 'none';
   render();
 }
@@ -577,19 +519,44 @@ function updateCounts() {
   document.getElementById('cnt-todo').textContent = recursos.length;
 }
 
+function getFiltered() {
+  let base = recursos;
+
+  // Si hay búsqueda, usar Fuse
+  if (searchQuery.length >= 2) {
+    base = fuse.search(searchQuery).map(r => r.item);
+  }
+
+  // Aplicar filtro de categoría encima
+  if (activeFilter !== 'todo') {
+    base = base.filter(r => r.tag === activeFilter);
+  }
+
+  return base;
+}
+
 function render() {
   const container = document.getElementById('cards-container');
-  const filtered = recursos.filter(r => {
-    const mF = activeFilter === 'todo' || r.tag === activeFilter;
-    const mS = !searchQuery || r.titulo.toLowerCase().includes(searchQuery) || r.desc.toLowerCase().includes(searchQuery) || r.tag.toLowerCase().includes(searchQuery);
-    return mF && mS;
-  });
+  const filtered = getFiltered();
 
   if (!filtered.length) {
     container.innerHTML = `<div class="empty"><i class="ti ti-search-off"></i><p>No se encontraron recursos para "<strong>${searchQuery}</strong>"</p></div>`;
     return;
   }
 
+  // Si hay búsqueda activa, mostrar todo plano sin agrupar por sección
+  if (searchQuery.length >= 2) {
+    let html = '<div class="grid">';
+    filtered.forEach(r => {
+      const m = tagMeta[r.tag];
+      html += cardHtml(r, m);
+    });
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Sin búsqueda: agrupar por categoría
   const groups = {};
   filtered.forEach(r => { if (!groups[r.tag]) groups[r.tag]=[]; groups[r.tag].push(r); });
 
@@ -601,24 +568,25 @@ function render() {
       html += `<div class="section-heading"><div class="s-dec"></div><h2><i class="ti ${m.icon}" style="font-size:12px;vertical-align:-1px;margin-right:5px"></i>${m.label}</h2></div>`;
     }
     html += '<div class="grid">';
-    groups[key].forEach(r => {
-      const m2 = tagMeta[r.tag];
-      html += `<a class="card" href="${r.url}" target="_blank" rel="noopener">
-        <div class="card-top">
-          <span class="card-tag ${m2.cls}">${m2.label}</span>
-          ${r.nuevo ? '<span class="badge-new">Nuevo</span>' : ''}
-        </div>
-        <div class="card-title">${r.titulo}</div>
-        <div class="card-desc">${r.desc}</div>
-        <div class="card-footer">
-          ${r.fecha ? `<span class="card-date"><i class="ti ti-calendar"></i>${r.fecha}</span>` : '<span></span>'}
-          <span class="card-open">Abrir <i class="ti ti-arrow-up-right" style="font-size:11px"></i></span>
-        </div>
-      </a>`;
-    });
+    groups[key].forEach(r => { html += cardHtml(r, tagMeta[r.tag]); });
     html += '</div>';
   });
   container.innerHTML = html;
+}
+
+function cardHtml(r, m) {
+  return `<a class="card" href="${r.url}" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-tag ${m.cls}">${m.label}</span>
+      ${r.nuevo ? '<span class="badge-new">Nuevo</span>' : ''}
+    </div>
+    <div class="card-title">${r.titulo}</div>
+    <div class="card-desc">${r.desc}</div>
+    <div class="card-footer">
+      ${r.fecha ? `<span class="card-date"><i class="ti ti-calendar"></i>${r.fecha}</span>` : '<span></span>'}
+      <span class="card-open">Abrir <i class="ti ti-arrow-up-right" style="font-size:11px"></i></span>
+    </div>
+  </a>`;
 }
 
 updateCounts();
